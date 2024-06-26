@@ -14,6 +14,7 @@ double out;
 
 // Function prototypes
 void displayProgressiveText(const string& text, int delay_ms);
+void FarenheitToCelsuis();
 void Calculator();
 void infos();
 void FileMode();
@@ -37,6 +38,83 @@ void clearScreen() {
 #endif
 }
 
+
+// Farenheit to celsuis conversion function
+void FarenheitToCelsuis() {
+
+    clearScreen();
+
+    string FarenheitToCelsuisTEXT1 =
+        "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
+        "//                                                                                                      //\n"
+        "//                                                                                                      //\n"
+        "//  Enter Farenheit number:                                                                             //\n";
+
+    displayProgressiveText(FarenheitToCelsuisTEXT1, 0);
+    cout << endl;
+
+    cin >> Farenheit;
+   
+
+    clearScreen();
+
+    string FarenheitToCelsuisTEXT2 =
+        "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
+        "//                                                                                                      //\n"
+        "//                                                                                                      //";
+
+    displayProgressiveText(FarenheitToCelsuisTEXT2, 0);
+    cout << endl;
+
+    cout << "//                                                                                                      //\n";
+    cout << "//  Farenheit number: " << Farenheit << "                                                                                 //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+
+    Farenheit = Farenheit - Step1;
+    cout << "//  Step one result: " << Farenheit << "                                                                                  //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+
+    Farenheit = Farenheit * Step2;
+    cout << "//  Step two result: " << Farenheit << "                                                                                  //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                              //\n";
+
+    Farenheit = Farenheit / Step3;
+    cout << "//  Step three result: " << Farenheit << "                                                                                  //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                              //\n";
+
+    cout << "//  Final Result: " << Farenheit << " C" << "                                                                                 //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//                                                                                                      //\n";
+    cout << "//  < Back                                                                                              //\n";
+    cout << "//                                                                                                      //\n";
+   cout << "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n";
+
+   cin >> IN;
+   
+   if (IN == "Back") {
+
+       clearScreen();
+       MainScreenOS();
+   }
+
+
+}
+
+
+
+
 // Calculator function
 void Calculator() {
     clearScreen();
@@ -47,7 +125,7 @@ void Calculator() {
         "//                                                                                                      //\n"
         "//   Enter the first number:                                                                            //\n";
 
-    displayProgressiveText(prompt, 0.9);
+    displayProgressiveText(prompt, 0);
     //NOTE: this look wierd beacouse it is, i have no idea what i did here i just wanted it to look nice (KINDA)
     cin >> num1;
     clearScreen();
@@ -125,7 +203,7 @@ void infos() {
         "//                                                                                                      //\n"
         "//   GAY OS INFO                                                                                        //\n"
         "//                                                                                                      //\n"
-        "//   Version 0.2                                                                                        //\n"
+        "//   Version 0.3.0                                                                                      //\n"
         "//   Project state: ALPHA                                                                               //\n"
         "//   Author: Szwajzen (Aleksander)                                                                      //\n"
         "//                                                                                                      //\n"
@@ -146,7 +224,7 @@ void infos() {
         "//                                                                                                      //\n"
         "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n";
 
-    displayProgressiveText(infoText, 0.9);
+    displayProgressiveText(infoText, 0);
     cout << endl;
 
     cin >> IN;
@@ -181,7 +259,7 @@ void FileMode() {
         "//                                                                                                      //\n"
         "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n";
 
-    displayProgressiveText(FileModeScreen, 0.9);
+    displayProgressiveText(FileModeScreen, 0);
     cout << endl;
 
     cin >> IN;
@@ -287,27 +365,31 @@ void MainScreenOS() {
         "//                                        Type CLOSE to close                                           //\n"
         "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n";
 
-    displayProgressiveText(asciiArt, 0.9);
+    displayProgressiveText(asciiArt, 0);
     cout << endl;
+    
+ cin >> IN;
 
-    cin >> IN;
-
-    if (IN == "R/W") {
-        FileMode();
-    }
-    else if (IN == "Infos") {
-        infos();
-    }
-    else if (IN == "Calculator") {
-        Calculator();
-    }
-    else if (IN == "CLOSE") {
-        exit(0);
-    }
-    else {
-        cout << "Invalid option." << endl;
-        MainScreenOS(); // re promt for another input
-    }
+ if (IN == "R/W") {
+     FileMode();
+ }
+ else if (IN == "Infos") {
+     infos();
+ }
+ else if (IN == "Calculator") {
+     Calculator();
+ }
+ else if (IN == "CLOSE") {
+     exit(0);
+ }
+ else if (IN == "F/C") {
+     FarenheitToCelsuis();
+ }
+ else {
+     cout << "Invalid option." << endl;
+     MainScreenOS(); // re promt for another input
+ }
+   
 }
 
 int main() {
