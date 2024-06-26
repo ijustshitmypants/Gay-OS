@@ -1,16 +1,15 @@
 This is just a small stupid project.
-
 Dont take anything serously ;)
-
 Any ideas for features are appreciated!
 
 
 
-Gay OS V0.3.0
+Gay OS V0.3.0 log thing
 
 Yayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 
 -[ADDED]
+
 Farenheit to Celsuis conversion
 
 -[CHANGED]
