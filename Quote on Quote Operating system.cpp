@@ -14,6 +14,7 @@ double out;
 
 // Function prototypes
 void displayProgressiveText(const string& text, int delay_ms);
+void CelsuisToFarenheit
 void Calculator();
 void infos();
 void FileMode();
@@ -37,6 +38,15 @@ void clearScreen() {
 #endif
 }
 
+//farenheit to celsuis function
+
+void CelsuisToFarenheit(){
+
+
+
+
+    
+}
 // Calculator function
 void Calculator() {
     clearScreen();
