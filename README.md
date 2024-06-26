@@ -10,9 +10,7 @@ Gay OS V0.3.0
 
 Yayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 
-Gay OS Version 0.3.0
-
-[ADDED]
+-[ADDED]
 Farenheit to Celsuis conversion
 
 -[CHANGED]
