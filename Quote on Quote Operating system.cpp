@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <chrono>
 #include <thread>
 #include <cstdlib>
@@ -12,16 +12,28 @@ double num1;
 double num2;
 double out;
 
-// Function prototypes
+//Constants for the conversion from Farenheit to Celsuis
+//Im making Step1 Step2 Step3 constants just to be safe
+// btw the conversion is the following
+// 200F X 5 = 1000F
+// 1000F / 9 = 111.1111...C
+double Farenheit;
+const double Step1 = 32;
+const double Step2 = 5;
+const double Stepo = 9;
+
+
+
+// Functions
 void displayProgressiveText(const string& text, int delay_ms);
 void FarenheitToCelsuis();
 void Calculator();
 void infos();
 void FileMode();
 void MainScreenOS();
-void clearScreen(); // Add a function to clear the screen
+void clearScreen(); 
 
-// Function to progressively display text with a delay between characters
+// Function to progressively display text with a delay between characters, for asthetics
 void displayProgressiveText(const string& text, int delay_ms) {
     for (char c : text) {
         cout << c << flush; // Output the character without buffering
@@ -43,19 +55,24 @@ void clearScreen() {
 void FarenheitToCelsuis() {
 
     clearScreen();
-
+    
+    // if you are wondering why this is called FarenheitToCelsuisTEXT1
+    // its bc the name was clashing with the function name so now it has TEXT1 and TEXT2
     string FarenheitToCelsuisTEXT1 =
         "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
         "//                                                                                                      //\n"
         "//                                                                                                      //\n"
         "//  Enter Farenheit number:                                                                             //\n";
-
+      
+    // its 0 bc 1 is too is too slow and 0.9 causes a warning
+    // and 0 kinda works, it isnt ideal but i wish i could make this better
     displayProgressiveText(FarenheitToCelsuisTEXT1, 0);
     cout << endl;
 
     cin >> Farenheit;
-   
 
+   // clearscreen is here bc of my very broken solution for inputting numbers into theese boxes
+    // might change them so that theyre full and completed and then it gets uptated on input
     clearScreen();
 
     string FarenheitToCelsuisTEXT2 =
@@ -66,7 +83,7 @@ void FarenheitToCelsuis() {
     displayProgressiveText(FarenheitToCelsuisTEXT2, 0);
     cout << endl;
 
-    cout << "//                                                                                                      //\n";
+    
     cout << "//  Farenheit number: " << Farenheit << "                                                                                 //\n";
     cout << "//                                                                                                      //\n";
     cout << "//                                                                                                      //\n";
@@ -81,7 +98,7 @@ void FarenheitToCelsuis() {
     cout << "//                                                                                                      //\n";
     cout << "//                                                                                              //\n";
 
-    Farenheit = Farenheit / Step3;
+    Farenheit = Farenheit / Stepo;
     cout << "//  Step three result: " << Farenheit << "                                                                                  //\n";
     cout << "//                                                                                                      //\n";
     cout << "//                                                                                              //\n";
@@ -103,12 +120,17 @@ void FarenheitToCelsuis() {
 
    cin >> IN;
    
+   // im jsut gonna put MainScreenOS(); on the else bc, eh who cares
    if (IN == "Back") {
 
        clearScreen();
        MainScreenOS();
-   }
+   } else {
 
+    MainScreenOS();
+
+   }
+   
 
 }
 
@@ -127,6 +149,7 @@ void Calculator() {
 
     displayProgressiveText(prompt, 0);
     //NOTE: this look wierd beacouse it is, i have no idea what i did here i just wanted it to look nice (KINDA)
+    // the guy above me is stupid
     cin >> num1;
     clearScreen();
 
@@ -157,7 +180,11 @@ void Calculator() {
 
     double divP = num1 / num2;
     double divPO = num2 / num1;
-
+    // divP means division product, i should change this for clarity
+    // the O on the end of some things means opposite, by that i mean.
+    // 10 / 2 the original input
+    // 2 / 10 the "reversed" input just for convienience
+    //this crap is confusing for a person who isnt in the loop so im sorry :3
 
 
 
@@ -186,6 +213,7 @@ void Calculator() {
     cout << "//                                                                                                      //\n";
     cout << "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n";
 
+    // I HATE DYNAMIC NUMBERS, it completly screws up the right wall!
 
     cin >> IN;
     if (IN == "Back") {
@@ -193,8 +221,14 @@ void Calculator() {
         clearScreen();
         MainScreenOS();
 
+    } else {
+
+      MainScreenOS();
+      // just adding this here
     }
 }
+
+
 // Info page, make sure to uptate every time i add a function
 void infos() {
     clearScreen();
@@ -203,7 +237,7 @@ void infos() {
         "//                                                                                                      //\n"
         "//   GAY OS INFO                                                                                        //\n"
         "//                                                                                                      //\n"
-        "//   Version 0.3.0                                                                                      //\n"
+        "//   Version 0.3.1                                                                                      //\n"
         "//   Project state: ALPHA                                                                               //\n"
         "//   Author: Szwajzen (Aleksander)                                                                      //\n"
         "//                                                                                                      //\n"
@@ -233,14 +267,15 @@ void infos() {
         MainScreenOS();
     }
     else {
-        cout << "uh oh";
+
+        MainScreenOS();
     }
 }
 
 // File mode function
 void FileMode() {
     clearScreen();
-    //TODO: make it possible to have more files
+    //TODO: make it possible to have more files 
     string FileModeScreen =
         "//////////////////////////////////////////////////////////////////////////////////////////////////////////\n"
         "//                                                                                                      //\n"
@@ -264,6 +299,8 @@ void FileMode() {
 
     cin >> IN;
 
+
+// i have no idea what i did here, it was late at night and i was just on autopilot
     if (IN == "Back") {
         MainScreenOS();
         return;
@@ -367,7 +404,7 @@ void MainScreenOS() {
 
     displayProgressiveText(asciiArt, 0);
     cout << endl;
-    
+    // shouldnt make the literal MOST imortant stricng something so vauge
  cin >> IN;
 
  if (IN == "R/W") {
@@ -392,6 +429,7 @@ void MainScreenOS() {
    
 }
 
+// Int main is just to launch this
 int main() {
     MainScreenOS();
     return 0;
