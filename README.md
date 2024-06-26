@@ -14,6 +14,30 @@ windows has .exe
 
 this is pure pain sometipes :P
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+GAY OS V0.3.1 [26.06.2024]
+
+
+- [ADDED]
+
+  Comments in source code
+
+
+
+- [CHANGED]
+
+  Nothing 💀👍
+
+
+
+- [FIXED]
+
+ for some reason the declerations for Step1 Step2 and Step3 were removed/ Missing, and Step3 was getting fukny so i had to change it.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
