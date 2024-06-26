@@ -4,7 +4,7 @@ Any ideas for features are appreciated!
 
 
 
-Gay OS V0.3.0 log thing
+Gay OS V0.3.0  [26.06.2024]log thing
 
 Yayyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
 
